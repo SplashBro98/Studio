@@ -1,0 +1,39 @@
+2018-07-16 11:37:02 [main] INFO  edu.epam.order.runner.Main - ************************************************
+Заказ: 10002
+Продюсер: Spielberg
+Название: Jaws
+Дата создания: 11:37:02.282
+------------------------------------------------
+Lease & tax                   800 euro
+Advertisment                     500 euro
+Actors                     2000 euro
+Montage                     10000 euro
+------------------------------------------------
+Всего:                              13300
+Кол-во:                             3
+------------------------------------------------
+Общая сумма:                              39900
+
+2018-07-18 23:28:01 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Pulp Fiction:2]
+2018-07-18 23:28:01 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer 10001:4]
+2018-07-18 23:28:01 [main] INFO  edu.epam.order.action.Producer -  was added
+2018-07-18 23:28:01 [main] INFO  edu.epam.order.runner.Main - ************************************************
+Заказ: 10000
+Продюсер: Spielberg
+Название: Pulp Fiction
+Дата создания: 23:28:00.941
+------------------------------------------------
+Lease & tax                   800 euro
+Scenario                     950 euro
+Scenario                     950 euro
+Scenario                     950 euro
+Scenario                     950 euro
+Scenario                     950 euro
+Scenario                     950 euro
+Scenario                     950 euro
+------------------------------------------------
+Всего:                              7450
+Кол-во:                             2
+------------------------------------------------
+Общая сумма:                              14900
+

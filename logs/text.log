@@ -1,0 +1,8 @@
+2018-07-19 11:42:26 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
+2018-07-19 11:42:26 [main] INFO  edu.epam.order.action.Producer -  was added
+2018-07-19 11:43:13 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Producer # 10000:2]
+2018-07-19 11:43:13 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
+2018-07-19 11:43:13 [main] INFO  edu.epam.order.action.Producer -  was added
+2018-07-19 11:43:29 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Producer # 10000:2]
+2018-07-19 11:43:29 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
+2018-07-19 11:43:29 [main] INFO  edu.epam.order.action.Producer -  was added

@@ -1,0 +1,20 @@
+2018-07-18 23:51:52 [main] INFO  edu.epam.order.runner.Main - ************************************************
+Заказ: 10002
+Продюсер: Spielberg
+Название: Jaws
+Дата создания: 23:51:52.908
+------------------------------------------------
+Lease & tax                 800 euro
+Advertisment500                  euro
+Actors    2000                 euro
+Montage   10000                euro
+------------------------------------------------
+Всего:                              13300
+Кол-во:                             3
+------------------------------------------------
+Общая сумма:                              39900
+
+2018-07-19 11:40:19 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Producer #:2]
+2018-07-19 11:40:19 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer #:4]
+2018-07-19 11:40:19 [main] INFO  edu.epam.order.action.Producer -  was added
+2018-07-19 11:42:26 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Producer # 10000:2]
