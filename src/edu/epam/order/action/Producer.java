@@ -59,7 +59,7 @@ public class Producer implements Addition {
             logger.log(Level.INFO, "All complete or this object is present");
         }
         else {
-            logger.log(Level.INFO,  " was added" );
+            logger.log(Level.INFO,  Worker.valueOf(enumName) + " was added" );
         }
     }
 }
