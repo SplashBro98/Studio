@@ -1,4 +1,9 @@
-2018-07-20 11:42:30 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Producer # 10000:2]
-2018-07-20 11:42:30 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
-2018-07-20 11:42:30 [main] INFO  edu.epam.order.action.Producer - SCENARIO was added
-2018-07-20 11:42:30 [main] INFO  edu.epam.order.action.Producer - ACTORS was added
+2018-07-26 01:14:08 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
+2018-07-26 01:14:08 [main] INFO  edu.epam.order.action.Producer - SCENARIO was added
+2018-07-26 01:14:08 [main] INFO  edu.epam.order.runner.Main - [10002:Spielberg:Jaws:3]
+2018-07-26 01:14:08 [main] INFO  edu.epam.order.action.Producer - All complete or ACTORS is present
+2018-07-26 01:14:42 [main] INFO  edu.epam.order.runner.Main - [10000:Spielberg:Pulp Fiction:2]
+2018-07-26 01:14:42 [main] INFO  edu.epam.order.runner.Main - [10001:Peele:Producer # 10001:4]
+2018-07-26 01:14:42 [main] INFO  edu.epam.order.action.Producer - SCENARIO was added
+2018-07-26 01:14:42 [main] INFO  edu.epam.order.runner.Main - [10002:Spielberg:Jaws:3]
+2018-07-26 01:14:42 [main] INFO  edu.epam.order.action.Producer - All complete or ACTORS is present

@@ -13,6 +13,7 @@ public class Order {
     public static final int MIN_NAME_LENGTH = 3;
     public static final int MAX_NAME_LENGTH = 20;
     public static final String DEFAULT_NAME = "Producer # ";
+    public static final String REGEX_ENGLISH = "[A-z\\s]{3,20}";
     private int id;
     private String producersName;
     private Movie movie;
@@ -27,7 +28,7 @@ public class Order {
             if (assignName(movieName)) {
                 this.movie = new Movie(movieName, count, producersName, this.id, workers);
             } else {
-                this.movie = new Movie(DEFAULT_NAME, count, producersName, this.id, workers);
+                this.movie = new Movie(DEFAULT_NAME + this.id, count, producersName, this.id, workers);
             }
         } catch (SimpleException e) {
             logger.log(Level.ERROR, e.getMessage());
@@ -69,10 +70,7 @@ public class Order {
         if (movieName == null) {
             throw new SimpleException("String is inValid");
         }
-        if(movieName.matches("[A-Z]{3,20} ")){
-            return true;
-        }
-        return false;
+        return movieName.matches(REGEX_ENGLISH);
 //        int counter = 0;
 //        for (int i = 0; i < movieName.length(); i++) {
 //            if ((movieName.charAt(i) < 91 && movieName.charAt(i) > 64) || (movieName.charAt(i) < 123 && movieName.charAt(i) > 96)) {
@@ -86,10 +84,17 @@ public class Order {
 //         return counter >= MIN_NAME_LENGTH && counter <= MAX_NAME_LENGTH;
     }
 
+    public int orderSum(){
+        int sum = 800;
+        for (int i = 0; i < this.movie.getWorkers().length && this.movie.getWorkers()[i] != null; i++) {
+            sum += this.movie.getWorkers()[i].getPrice();
+        }
+        return sum;
+    }
+
     @Override
     public String toString() {
-        int sum = 0;
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("************************************************\n");
         sb.append("Заказ: " + this.id + "\n");
         sb.append("Продюсер: " + this.producersName + "\n");
@@ -98,22 +103,19 @@ public class Order {
         sb.append("------------------------------------------------" + "\n");
         String string1 = String.format("%10s%20d%s%n","Lease & tax",800," euro");
         sb.append(string1);
-        sum += 800;
         for (int i = 0; i < this.movie.getWorkers().length; i++) {
             if (this.movie.getWorkers()[i] == null) {
                 break;
             }
             string1 = String.format("%-10s%20d%s%n",this.movie.getWorkers()[i].getName(),this.movie.getWorkers()[i].getPrice()," euro");
             sb.append(string1);
-            sum += this.movie.getWorkers()[i].getPrice();
         }
         sb.append("------------------------------------------------\n");
-        sb.append("Всего:                              " + sum + "\n");
+        sb.append("Всего:                              " + orderSum() + "\n");
         sb.append("Кол-во:                             " + this.movie.getCount() + "\n");
         sb.append("------------------------------------------------\n");
-        sb.append("Общая сумма:                              " + sum * this.movie.getCount() + "\n");
+        sb.append("Общая сумма:                              " + orderSum() * this.movie.getCount() + "\n");
 
         return sb.toString();
-
     }
 }

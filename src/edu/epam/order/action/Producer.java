@@ -18,9 +18,6 @@ public class Producer implements Addition {
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
     public int getNumber() {
         return number;
     }
@@ -56,7 +53,7 @@ public class Producer implements Addition {
     @Override
     public void addWorker(int orderNumber, String enumName) {
         if(!this.getOrder(orderNumber).getMovie().addWorker(enumName)) {
-            logger.log(Level.INFO, "All complete or this object is present");
+            logger.log(Level.INFO, "All complete or "+ Worker.valueOf(enumName) + " is present");
         }
         else {
             logger.log(Level.INFO,  Worker.valueOf(enumName) + " was added" );

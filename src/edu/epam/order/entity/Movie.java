@@ -65,8 +65,10 @@ public class Movie {
                 break;
             }
             else{
-                if(this.workers[i].getName().equals(worker.getName()))
+                if(this.workers[i].getName().equals(worker.getName())) {
                     validWorker = false;
+                    break;
+                }
             }
         }
         return validWorker;

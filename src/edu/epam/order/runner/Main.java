@@ -26,6 +26,7 @@ public class Main {
         workers[1] = Worker.ACTORS;
         workers[2] = Worker.MONTAGE;
         producer.createOrder("Jaws",3,workers);
+        logger.log(Level.INFO,producer.getOrder(1).getMovie());
         producer.addWorker(1,"ACTORS");
 
 //        producer.addWorker(0,"STAGE_DIRECTOR");
