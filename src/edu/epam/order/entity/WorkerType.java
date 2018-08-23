@@ -1,6 +1,6 @@
 package edu.epam.order.entity;
 
-public enum Worker {
+public enum WorkerType {
 
     STAGE_DIRECTOR ("Stage Director", 12000),
     SCENARIO("Scenario", 950),
@@ -13,7 +13,7 @@ public enum Worker {
     private int price;
     private String name;
 
-    Worker(String enumName, int price) {
+    WorkerType(String enumName, int price) {
         this.name = enumName;
         this.price = price;
     }

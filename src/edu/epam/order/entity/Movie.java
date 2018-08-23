@@ -1,41 +1,45 @@
 package edu.epam.order.entity;
 
 import edu.epam.order.util.IdGenerator;
+import edu.epam.order.validation.Validator;
 
 import java.util.Arrays;
 import java.util.Random;
 
 
 public class Movie {
+    public static final int WORKER_MAX_COUNT = 7;
+    public static final int MAX_ID_VALUE = 89999;
+    public final static int ADDITION_FOR_ID = 10000;
 
+    private int movieId;
     private String name;
-    private int id;
     private int count;
     private int orderNumber;
     private String producersName;
-    private Worker[] workers;
+    private WorkerType[] workers;
+    private int workerCounter = 0;
 
     public Movie(String name, int count, String producer, int orderNumber) {
         this.count = count;
         this.name = name;
-        this.id = IdGenerator.createInt(89999) + 10000;
+        this.movieId = IdGenerator.createInt(MAX_ID_VALUE) + ADDITION_FOR_ID;
         this.producersName = producer;
         this.orderNumber = orderNumber;
-        this.workers = new Worker[7];
+        this.workers = new WorkerType[WORKER_MAX_COUNT];
     }
-    public Movie(String name, int count, String producer, int orderNumber, Worker[] workers) {
+    public Movie(String name, int count, String producer, int orderNumber, WorkerType[] workers) {
         this.count = count;
         this.name = name;
-        Random r = new Random();
-        this.id = r.nextInt(89999) + 10000;
+        this.movieId = IdGenerator.createInt(MAX_ID_VALUE) + ADDITION_FOR_ID;
         this.producersName = producer;
         this.orderNumber = orderNumber;
-        this.workers =  Arrays.copyOf(workers,7);
-
+        this.workers =  Arrays.copyOf(workers,WORKER_MAX_COUNT);
+        this.workerCounter = workers.length;
     }
 
-    public int getId() {
-        return id;
+    public int getMovieId() {
+        return movieId;
     }
     public String getName() {
         return name;
@@ -43,7 +47,7 @@ public class Movie {
     public void setName(String name) {
         this.name = name;
     }
-    public Worker[] getWorkers() {
+    public WorkerType[] getWorkers() {
         return workers;
     }
     public String getProducersName() {
@@ -56,27 +60,14 @@ public class Movie {
         this.count = count;
     }
     public boolean addWorker(String enumName){
-        Worker worker = Worker.valueOf(enumName);
-        boolean validWorker = false;
-        for (int i = 0; i < 7; i++) {
-            if(this.workers[i] == null){
-                this.workers[i] = worker;
-                validWorker = true;
-                break;
-            }
-            else{
-                if(this.workers[i].getName().equals(worker.getName())) {
-                    validWorker = false;
-                    break;
-                }
-            }
+        WorkerType worker = WorkerType.valueOf(enumName.toUpperCase());
+        Validator validator = new Validator();
+        if(validator.checkWorker(worker,this.workers,this.workerCounter)){
+            workers[this.workerCounter++] = worker;
+            return true;
         }
-        return validWorker;
+        return false;
     }
-
-
-
-
 
     @Override
     public String toString() {

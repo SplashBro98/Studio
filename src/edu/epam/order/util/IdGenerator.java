@@ -14,14 +14,7 @@ public class IdGenerator {
     public static int getOrderId() {
         return orderId++;
     }
-    public static void setOrderId(int orderId) {
-        IdGenerator.orderId = orderId;
-    }
-
     public static int getProducerId() {
         return producerId++;
-    }
-    public static void setProducerId(int producerId) {
-        IdGenerator.producerId = producerId;
     }
 }
