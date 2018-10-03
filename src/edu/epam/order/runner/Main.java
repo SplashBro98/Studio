@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
@@ -21,6 +22,8 @@ public class Main {
         try {
             //reading info from file
             ReaderFromFile reader = new ReaderFromFile();
+            List<String> list = reader.readInfo("input\\input.txt");
+
             OrderCreator orderCreator = new OrderCreator();
             ArrayList<Order> orders = orderCreator.makeOrder(reader.readInfo("input\\input.txt"));
             ProducerCollection.AddOrders(orders);
